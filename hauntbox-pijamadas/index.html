@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pijamadas · Hauntbox</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0d0d1a;
+      color: #e8e0f0;
+      font-family: 'Georgia', serif;
+      min-height: 100vh;
+    }
+
+    /* --- NAV --- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid #2a1a4a;
+      background: #0a0a14;
+    }
+
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      color: #c084fc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul a {
+      color: #a78bfa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: #e879f9; }
+
+    /* --- HERO --- */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: radial-gradient(ellipse at 50% 0%, #2d1b4e 0%, #0d0d1a 70%);
+    }
+
+    .hero .moon { font-size: 3rem; margin-bottom: 1rem; }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #f0abfc;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 40px #c084fc88;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #c4b5fd;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #7c3aed;
+      color: #fff;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:hover { background: #9d4edd; transform: translateY(-1px); }
+
+    /* --- EVENTS --- */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.6rem;
+      color: #e879f9;
+      margin-bottom: 2rem;
+      border-left: 3px solid #7c3aed;
+      padding-left: 0.8rem;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: #131328;
+      border: 1px solid #2a1a4a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .card:hover {
+      border-color: #7c3aed;
+      transform: translateY(-3px);
+    }
+
+    .card .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .badge.sold-out { background: #3f1f1f; color: #f87171; }
+    .badge.few-left { background: #3f2a00; color: #fbbf24; }
+    .badge.open      { background: #1a3a2a; color: #34d399; }
+
+    .card h3 { font-size: 1.1rem; color: #f0abfc; margin-bottom: 0.4rem; }
+
+    .card .meta {
+      font-size: 0.83rem;
+      color: #7c6fa0;
+      margin-bottom: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .card .desc {
+      font-size: 0.88rem;
+      color: #b8a9d0;
+      line-height: 1.55;
+      margin-bottom: 1.2rem;
+    }
+
+    .card a.btn-sm {
+      font-size: 0.82rem;
+      padding: 0.5rem 1.2rem;
+      background: #4c1d95;
+      color: #e9d5ff;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .card a.btn-sm:hover { background: #6d28d9; }
+
+    /* --- FOOTER --- */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #4b3f6b;
+      border-top: 1px solid #1a1030;
+    }
+
+    footer span { color: #7c3aed; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">🌙 Hauntbox</div>
+    <ul>
+      <li><a href="#">Eventos</a></li>
+      <li><a href="#">Galería</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="moon">🌛</div>
+    <h1>Pijamadas de otro mundo</h1>
+    <p>Noches de terror, magia y misterio. Traé tu almohada y dejá el miedo… si podés.</p>
+    <a href="#eventos" class="btn">Ver eventos ↓</a>
+  </section>
+
+  <section class="section" id="eventos">
+    <h2>Próximos eventos</h2>
+    <div class="events-grid">
+
+      <div class="card">
+        <span class="badge sold-out">Agotado</span>
+        <h3>Noche del Exorcista</h3>
+        <div class="meta">📅 12 Jul · 21:00 hs<br>📍 Salón Oscuro, CABA</div>
+        <p class="desc">Maratón de películas de posesión, cena temática y actividad de ouija guiada.</p>
+        <a href="#" class="btn-sm">Lista de espera</a>
+      </div>
+
+      <div class="card">
+        <span class="badge few-left">Últimos lugares</span>
+        <h3>Pijamada Vampírica</h3>
+        <div class="meta">📅 19 Jul · 22:00 hs<br>📍 Casona El Roble, GBA</div>
+        <p class="desc">Vestuario victoriano, sangría roja, photobooth de colmillos y más.</p>
+        <a href="#" class="btn-sm">Reservar lugar</a>
+      </div>
+
+      <div class="card">
+        <span class="badge open">Lugares disponibles</span>
+        <h3>Brujitas Sleep Over</h3>
+        <div class="meta">📅 2 Ago · 20:00 hs<br>📍 Estudio Lunar, Palermo</div>
+        <p class="desc">Taller de velas, lectura de tarot y cine de brujas clásico hasta el amanecer.</p>
+        <a href="#" class="btn-sm">Reservar lugar</a>
+      </div>
+
+      <div class="card">
+        <span class="badge open">Lugares disponibles</span>
+        <h3>Terror Interactivo</h3>
+        <div class="meta">📅 16 Ago · 21:30 hs<br>📍 El Sótano, San Telmo</div>
+        <p class="desc">Escape room en la oscuridad, cena a ciegas y proyección de cortometrajes de terror argento.</p>
+        <a href="#" class="btn-sm">Reservar lugar</a>
+      </div>
+
+      <div class="card">
+        <span class="badge few-left">Últimos lugares</span>
+        <h3>Noche de Fantasmas</h3>
+        <div class="meta">📅 30 Ago · 20:00 hs<br>📍 Quinta La Niebla, Ezeiza</div>
+        <p class="desc">Tour nocturno por la quinta, cuentos de fantasmas alrededor del fuego y desayuno al alba.</p>
+        <a href="#" class="btn-sm">Reservar lugar</a>
+      </div>
+
+      <div class="card">
+        <span class="badge open">Lugares disponibles</span>
+        <h3>Maratón Lovecraft</h3>
+        <div class="meta">📅 13 Sep · 22:00 hs<br>📍 Biblioteca Arcana, Recoleta</div>
+        <p class="desc">Lectura en voz alta, adaptaciones fílmicas y ritual de bienvenida a los Antiguos.</p>
+        <a href="#" class="btn-sm">Reservar lugar</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    Hecho con 🕯️ por <span>Hauntbox</span> · 2026
+  </footer>
+
+</body>
+</html>
